@@ -1,5 +1,3 @@
-function openCourses(){
-
-window.location.href="courses.html";
-
+function openCourses() {
+    window.location.href = "courses.html";
 }
