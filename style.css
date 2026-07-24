@@ -168,3 +168,32 @@ body::before{
         transform:translateY(-120px);
     }
 }
+.globe{
+    position:relative;
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, #6fd3ff, #0b4ea2 70%, #021126 100%);
+    box-shadow:0 0 60px rgba(0,191,255,.6);
+    animation:spin 18s linear infinite;
+    cursor:pointer;
+}
+
+.glow{
+    position:absolute;
+    inset:-20px;
+    border-radius:50%;
+    background:rgba(0,191,255,.15);
+    filter:blur(25px);
+}
+
+.ring{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:360px;
+    height:360px;
+    transform:translate(-50%,-50%);
+    border:2px solid rgba(120,220,255,.4);
+    border-radius:50%;
+}
