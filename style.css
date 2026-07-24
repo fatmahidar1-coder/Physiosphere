@@ -175,15 +175,6 @@ body::before{
         transform:translateY(-120px);
     }
 }
-.globe{
-    position:relative;
-    width:320px;
-    height:320px;
-    border-radius:50%;
-    box-shadow:0 0 60px rgba(0,191,255,.6);
-    animation:spin 18s linear infinite;
-    cursor:pointer;
-}
 
 .glow{
     position:absolute;
@@ -202,4 +193,10 @@ body::before{
     transform:translate(-50%,-50%);
     border:2px solid rgba(120,220,255,.4);
     border-radius:50%;
+}
+#globe-container{
+    width:320px;
+    height:320px;
+    margin:30px auto;
+    cursor:pointer;
 }
