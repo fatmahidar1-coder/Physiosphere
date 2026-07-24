@@ -29,12 +29,13 @@ h1{
 }
 
 .globe{
-    width:320px;
-    height:320px;
-    border-radius:50%;
-    cursor:pointer;
-    animation:spin 20s linear infinite;
-    box-shadow:0 0 40px #2196f3;
+width:320px;
+height:320px;
+border-radius:50%;
+cursor:pointer;
+animation:spin 20s linear infinite;
+object-fit:cover;
+box-shadow:0 0 40px #1fa9ff;
 }
 
 .click{
