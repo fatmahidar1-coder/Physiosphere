@@ -1,10 +1,11 @@
 body{
     margin:0;
     padding:0;
-    background:#06152f;
-    font-family:Arial, sans-serif;
+    background:linear-gradient(180deg,#021126,#061b3f,#031127);
+    font-family:Arial,sans-serif;
     color:white;
     overflow:hidden;
+}
 }
 
 .container{
