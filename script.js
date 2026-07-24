@@ -25,6 +25,24 @@ const texture = new THREE.TextureLoader().load("globe.png");
 const material = new THREE.MeshStandardMaterial({
 map:texture
 });
+const light = new THREE.DirectionalLight(0xffffff,2);
+
+light.position.set(5,3,5);
+
+scene.add(light);
+
+scene.add(new THREE.AmbientLight(0xffffff,1));
+function animate(){
+
+requestAnimationFrame(animate);
+
+globe.rotation.y += 0.005;
+
+renderer.render(scene,camera);
+
+}
+
+animate();
 
 const globe = new THREE.Mesh(
 geometry,
@@ -32,3 +50,8 @@ material
 );
 
 scene.add(globe);
+renderer.domElement.onclick = function(){
+
+window.location.href="courses.html";
+
+};
