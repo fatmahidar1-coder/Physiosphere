@@ -52,3 +52,20 @@ box-shadow:0 5px 15px rgba(0,0,0,.15);
 .card h3{
 color:#0b7db8;
 }
+h2{
+text-align:center;
+color:#0b7db8;
+}
+
+.card{
+background:white;
+padding:20px;
+margin:20px auto;
+max-width:500px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.card h3{
+color:#0b7db8;
+}
