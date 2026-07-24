@@ -27,16 +27,24 @@ h1{
     margin-bottom:40px;
 }
 
-.globe{
-width:320px;
-height:320px;
-border-radius:50%;
-cursor:pointer;
-animation:spin 20s linear infinite;
-object-fit:cover;
-box-shadow:0 0 40px #1fa9ff;
-}
+.globe {
+    width: 320px;
+    height: 320px;
+    display: block;
+    margin: 20px auto;
+    cursor: pointer;
 
+    border-radius: 50%;
+
+    animation: rotateY 20s linear infinite;
+
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+
+    box-shadow:
+        0 0 40px rgba(0,162,255,.6),
+        0 0 80px rgba(0,162,255,.3);
+}
 .click{
     margin-top:35px;
     font-size:22px;
