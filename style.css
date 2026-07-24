@@ -129,7 +129,7 @@ transform:rotate(360deg);
 body{
     font-family:Arial, sans-serif;
     background:linear-gradient(to bottom,#06152f,#0b2f5b);
-    color:white;
+    color:blue;
     min-height:100vh;
     overflow-x:hidden;
     position:relative;
