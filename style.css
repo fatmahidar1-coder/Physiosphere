@@ -204,3 +204,14 @@ h2{
     text-align:center;
     color:#0b7db8;
     margin:30px 0
+    #globe-container{
+    width:340px;
+    height:340px;
+    margin:40px auto;
+    cursor:pointer;
+}
+
+canvas{
+    display:block;
+    margin:auto;
+}
