@@ -1,3 +1,2 @@
-function openCourses() {
-    window.location.href = "courses.html";
+canvas.addEventListener("click", openCourses);
 }
