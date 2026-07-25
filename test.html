@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhysioSphere Test</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background:#020814;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      color:white;
+      font-family:Arial, sans-serif;
+      flex-direction:column;
+    }
+
+    h1{
+      font-size:60px;
+      margin-bottom:30px;
+    }
+
+    .circle{
+      width:250px;
+      height:250px;
+      border-radius:50%;
+      background:radial-gradient(circle,#39bfff,#0b4ea2);
+      box-shadow:0 0 50px rgba(0,191,255,.8);
+      animation:spin 12s linear infinite;
+    }
+
+    @keyframes spin{
+      from{
+        transform:rotate(0deg);
+      }
+      to{
+        transform:rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>PhysioSphere</h1>
+
+<div class="circle"></div>
+
+</body>
+</html>
