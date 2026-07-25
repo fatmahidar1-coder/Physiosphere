@@ -27,6 +27,9 @@ canvas.style.cursor="pointer";
 const oldGlobe=document.querySelector(".globe");
 
 oldGlobe.replaceWith(canvas);
+canvas.addEventListener("click", () => {
+    window.location.href = "courses.html";
+});
 
 const geometry=new THREE.SphereGeometry(1,64,64);
 
