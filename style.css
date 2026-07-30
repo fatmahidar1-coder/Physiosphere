@@ -1,3 +1,7 @@
+/* ========================= */
+/* General */
+/* ========================= */
+
 *{
     margin:0;
     padding:0;
@@ -5,20 +9,48 @@
 }
 
 body{
-    font-family:Arial, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     background:linear-gradient(to bottom,#020814,#071b35,#0a2f5b);
     color:white;
     min-height:100vh;
-    overflow:hidden;
+    overflow-x:hidden;
 }
 
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+        radial-gradient(white 1px,transparent 1px),
+        radial-gradient(#4cc7ff 1px,transparent 1px);
+    background-size:90px 90px,150px 150px;
+    opacity:.22;
+    animation:stars 35s linear infinite;
+    pointer-events:none;
+}
+
+@keyframes stars{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-120px);
+    }
+}
+
+/* ========================= */
+/* Home Page */
+/* ========================= */
+
 .container{
+    width:100%;
+    min-height:100vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    height:100vh;
     text-align:center;
+    padding:50px 20px;
 }
 
 h1{
@@ -33,105 +65,304 @@ h1{
     margin-bottom:40px;
 }
 
-.globe{
-    width:340px;
-    height:340px;
-    border-radius:50%;
-    cursor:pointer;
-
-    object-fit:cover;
-
-    animation:spin 20s linear infinite;
-
-    background:
-        radial-gradient(circle at 30% 30%, #4fc3ff, #1574d6 55%, #04274f 100%);
-
-    border:2px solid rgba(120,220,255,.4);
-
-    box-shadow:
-        0 0 25px #00aaff,
-        0 0 60px rgba(0,180,255,.5),
-        inset -30px -30px 50px rgba(0,0,0,.45),
-        inset 25px 25px 35px rgba(255,255,255,.12);
-
-    position:relative;
-
-    overflow:hidden;
-}
-.globe::before{
-    content:"";
-
-    position:absolute;
-
-    width:200%;
-
-    height:100%;
-
-    left:-100%;
-
-    top:0;
-
-    background:
-        repeating-linear-gradient(
-            90deg,
-            rgba(255,255,255,.15) 0px,
-            rgba(255,255,255,.15) 2px,
-            transparent 2px,
-            transparent 22px
-        );
-
-    animation:moveTexture 12s linear infinite;
-}
-.globe:hover{
-    transform:scale(1.05);
-}
-
 .click{
     margin-top:35px;
     font-size:22px;
     color:#d9ecff;
 }
 
-@keyframes spin{
+/* ========================= */
+/* Courses Page */
+/* ========================= */
+
+.courses-container{
+    width:100%;
+    max-width:1300px;
+    margin:auto;
+    padding:70px 30px;
+    text-align:center;
+}
+
+.courses-container h1{
+    font-size:72px;
+    margin-bottom:20px;
+}
+
+.courses-container .subtitle{
+    font-size:28px;
+    color:#5cc6ff;
+    margin-bottom:60px;
+}
+
+.course-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+    gap:35px;
+}
+
+.course-card{
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    text-decoration:none;
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    min-height:430px;
+
+    transition:all .35s ease;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+    opacity:0;
+
+    animation:fadeUp .8s forwards;
+}
+
+.course-card:nth-child(1){
+    animation-delay:.2s;
+}
+
+.course-card:nth-child(2){
+    animation-delay:.4s;
+}
+
+.course-card:nth-child(3){
+    animation-delay:.6s;
+}
+
+.course-card:nth-child(4){
+    animation-delay:.8s;
+}
+
+.course-card:nth-child(5){
+    animation-delay:1s;
+}
+
+.course-card:hover{
+
+    transform:translateY(-12px) scale(1.03);
+
+    background:rgba(77,184,255,.18);
+
+    border:1px solid #58c6ff;
+
+    box-shadow:
+        0 0 25px rgba(88,198,255,.35),
+        0 0 60px rgba(88,198,255,.18),
+        0 20px 40px rgba(0,0,0,.35);
+
+}
+
+.icon{
+
+    font-size:60px;
+
+    margin-bottom:20px;
+
+    transition:transform .4s ease;
+
+}
+
+.course-card:hover .icon{
+
+    transform:scale(1.25) rotate(10deg);
+
+}
+
+.course-card h2{
+
+    font-size:40px;
+
+    margin-bottom:10px;
+
+    color:white;
+
+}
+
+.course-card h3{
+
+    color:#5cc6ff;
+
+    font-size:26px;
+
+    font-weight:normal;
+
+    margin-bottom:25px;
+
+}
+
+.course-card p{
+
+    color:#d7e8ff;
+
+    line-height:1.8;
+
+    font-size:19px;
+
+    margin-bottom:30px;
+
+}
+
+.course-card span{
+
+    color:#66c8ff;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.course-card:hover span{
+
+    letter-spacing:2px;
+
+}
+
+/* ========================= */
+/* Animation */
+/* ========================= */
+
+@keyframes fadeUp{
+
     from{
-        transform:rotate(0deg);
+
+        opacity:0;
+
+        transform:translateY(40px);
+
     }
 
     to{
-        transform:rotate(360deg);
-    }
-}
-@keyframes moveTexture{
 
-    from{
-        transform:translateX(0);
-    }
+        opacity:1;
 
-    to{
-        transform:translateX(50%);
-    }
-
-}
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background-image:
-    radial-gradient(white 1px,transparent 1px),
-    radial-gradient(#4cc7ff 1px,transparent 1px);
-
-    background-size:90px 90px,150px 150px;
-    opacity:.25;
-    animation:stars 35s linear infinite;
-    pointer-events:none;
-}
-
-@keyframes stars{
-    from{
         transform:translateY(0);
+
     }
 
-    to{
-        transform:translateY(-120px);
+}
+
+/* ========================= */
+/* Responsive */
+/* ========================= */
+
+@media(max-width:768px){
+
+    h1{
+        font-size:50px;
     }
+
+    .subtitle{
+        font-size:22px;
+    }
+
+    .course-card h2{
+        font-size:32px;
+    }
+
+    .course-card h3{
+        font-size:22px;
+    }
+
+}
+/* ========================= */
+/* Admin Login */
+/* ========================= */
+
+.admin-login{
+
+width:420px;
+
+margin:100px auto;
+
+padding:40px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.15);
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+text-align:center;
+
+box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+}
+
+.admin-login input{
+
+padding:15px;
+
+font-size:18px;
+
+border:none;
+
+border-radius:12px;
+
+outline:none;
+
+}
+
+.admin-login button{
+
+padding:15px;
+
+font-size:20px;
+
+background:#4db8ff;
+
+color:white;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.admin-login button:hover{
+
+background:#66c8ff;
+
+transform:translateY(-2px);
+
+}
+
+#message{
+
+margin-top:10px;
+
+color:#ffbdbd;
+
 }

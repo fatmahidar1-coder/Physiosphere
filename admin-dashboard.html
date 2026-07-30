@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PhysioSphere Admin Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="admin-container">
+
+    <h1>
+        PhysioSphere Admin Dashboard
+    </h1>
+
+
+    <p>
+        Welcome Admin
+    </p>
+
+
+    <hr>
+
+
+    <h2>
+        Manage Courses
+    </h2>
+
+
+    <label>
+        Choose Course:
+    </label>
+
+
+    <select id="courseSelect">
+
+        <option value="anatomy">
+            Anatomy
+        </option>
+
+        <option value="physiology">
+            Physiology
+        </option>
+
+        <option value="electrotherapy">
+            Electrotherapy
+        </option>
+
+        <option value="mmt">
+            Manual Muscle Testing
+        </option>
+
+        <option value="biomechanics">
+            Biomechanics
+        </option>
+
+
+    </select>
+
+
+
+    <br><br>
+
+
+    <label>
+        Upload Video / File:
+    </label>
+
+
+    <input 
+        type="file"
+        id="fileUpload">
+
+
+
+    <br><br>
+
+
+    <button id="uploadBtn">
+        Upload
+    </button>
+
+
+
+    <p id="status"></p>
+
+
+</div>
+
+
+
+<script type="module" src="firebase.js"></script>
+
+
+</body>
+
+</html>
